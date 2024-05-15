@@ -29,7 +29,7 @@ class _SignUpPAgeState extends State<SignUpPAge> {
             SizedBox(height: 15),
             AuthenticationField(hintText: 'Correo Electronico'),
             SizedBox(height: 15),
-            AuthenticationField(hintText: 'Contraseña'),
+            AuthenticationField(hintText: 'Contraseñaxd'),
             SizedBox(height: 20),
             AuthenticationField(hintText: 'Registrar'),
           ],
