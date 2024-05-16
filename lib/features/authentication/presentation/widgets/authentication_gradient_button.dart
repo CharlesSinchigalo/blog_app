@@ -8,11 +8,17 @@ class AuthenticationGradientButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        AppColorPallete.gradient1,
-        AppColorPallete.gradient2,
-      ])),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            AppColorPallete.gradient1,
+            AppColorPallete.gradient2,
+          ],
+          begin: Alignment.bottomLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(25),
+      ),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             fixedSize: const Size(400, 50),
@@ -20,7 +26,7 @@ class AuthenticationGradientButton extends StatelessWidget {
           onPressed: null,
           child: const Text(
             'Registrarse',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
           )),
     );
   }
