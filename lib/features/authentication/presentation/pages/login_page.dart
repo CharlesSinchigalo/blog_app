@@ -1,7 +1,9 @@
 import 'package:blog_app/core/app_color_pallete.dart';
+import 'package:blog_app/features/authentication/presentation/pages/signup_pages.dart';
 import 'package:blog_app/features/authentication/presentation/widgets/authentication_field.dart';
 import 'package:blog_app/features/authentication/presentation/widgets/authentication_gradient_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -54,20 +56,24 @@ class _LoginPageState extends State<LoginPage> {
                 buttonText: 'Ingresar',
               ),
               const SizedBox(height: 20),
-              RichText(
-                text: TextSpan(
-                    text: '¿No tiene una cuenta?',
-                    style: Theme.of(context).textTheme.titleSmall,
-                    children: [
-                      TextSpan(
-                        text: ' Crear cuenta',
-                        style:
-                            Theme.of(context).textTheme.titleMedium?.copyWith(
-                                  color: AppColorPallete.gradient2,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                      ),
-                    ]),
+              GestureDetector(
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const  SignUpPAge(),));
+                onTap:() {},
+                child: RichText(
+                  text: TextSpan(
+                      text: '¿No tiene una cuenta?',
+                      style: Theme.of(context).textTheme.titleSmall,
+                      children: [
+                        TextSpan(
+                          text: ' Crear cuenta',
+                          style:
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    color: AppColorPallete.gradient2,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                      ]),
+                ),
               ),
             ],
           ),
