@@ -50,7 +50,9 @@ class _LoginPageState extends State<LoginPage> {
                 isObsureText: true,
               ),
               const SizedBox(height: 20),
-              const AuthenticationGradientButton(),
+              const AuthenticationGradientButton(
+                buttonText: 'Ingresar',
+              ),
               const SizedBox(height: 20),
               RichText(
                 text: TextSpan(
