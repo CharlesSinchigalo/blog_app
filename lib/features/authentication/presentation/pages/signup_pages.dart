@@ -1,4 +1,5 @@
 import 'package:blog_app/core/app_color_pallete.dart';
+import 'package:blog_app/features/authentication/presentation/pages/login_page.dart';
 import 'package:blog_app/features/authentication/presentation/widgets/authentication_field.dart';
 import 'package:blog_app/features/authentication/presentation/widgets/authentication_gradient_button.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,13 @@ class SignUpPAge extends StatefulWidget {
 
   @override
   State<SignUpPAge> createState() => _SignUpPAgeState();
+  static route() {
+    return MaterialPageRoute(
+      builder: (context) {
+        return const SignUpPAge();
+      },
+    );
+  }
 }
 
 class _SignUpPAgeState extends State<SignUpPAge> {
@@ -26,6 +34,7 @@ class _SignUpPAgeState extends State<SignUpPAge> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -57,20 +66,28 @@ class _SignUpPAgeState extends State<SignUpPAge> {
                 buttonText: 'Registrarse',
               ),
               const SizedBox(height: 20),
-              RichText(
-                text: TextSpan(
-                    text: '¿Tiene una cuenta?',
-                    style: Theme.of(context).textTheme.titleSmall,
-                    children: [
-                      TextSpan(
-                        text: ' Iniciar sesion',
-                        style:
-                            Theme.of(context).textTheme.titleMedium?.copyWith(
-                                  color: AppColorPallete.gradient2,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                      ),
-                    ]),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    LoginPage.route(),
+                  );
+                },
+                child: RichText(
+                  text: TextSpan(
+                      text: '¿Tiene una cuenta?',
+                      style: Theme.of(context).textTheme.titleSmall,
+                      children: [
+                        TextSpan(
+                          text: ' Iniciar sesion',
+                          style:
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    color: AppColorPallete.gradient2,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                      ]),
+                ),
               ),
             ],
           ),

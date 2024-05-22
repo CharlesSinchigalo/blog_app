@@ -10,6 +10,13 @@ class LoginPage extends StatefulWidget {
 
   @override
   State<LoginPage> createState() => _LoginPageState();
+  static route() {
+    return MaterialPageRoute(
+      builder: (context) {
+        return const SignUpPAge();
+      },
+    );
+  }
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -57,8 +64,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 20),
               GestureDetector(
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const  SignUpPAge(),));
-                onTap:() {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    SignUpPAge.route(),
+                  );
+                },
                 child: RichText(
                   text: TextSpan(
                       text: '¿No tiene una cuenta?',
